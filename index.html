@@ -458,6 +458,8 @@
             { day: "25", month: "Mars", title: "CSE Central", loc: "Salle Plénière", type: "national" }
         ];
 
+        let currentSiteId = 'default';
+
         const siteContent = {
             'default': [
                 { title: "Grève Nationale NAO : Mobilisation historique !", tag: "Urgent", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=60&w=600", content: "<p>Face à la proposition inacceptable de la Direction, les raffineries se mettent à l'arrêt. La solidarité est de mise sur tous les sites. <strong>Rendez-vous à 06h00 devant les grilles.</strong></p><p class='mt-4'>Nous exigeons une augmentation digne et une répartition plus juste des richesses créées par notre travail.</p>" },
@@ -465,6 +467,38 @@
                 { title: "Victoire de la CGT sur le Télétravail", tag: "Succès", image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=60&w=600", content: "<p>Après 3 mois de négociations intenses, nous avons obtenu la pérennisation des 2 jours de télétravail pour le personnel éligible.</p><p class='mt-4'>La prime d'équipement forfaitaire de 150€ est également maintenue pour tous.</p>" },
                 { title: "Nouveau Plan Épargne Entreprise (PEG)", tag: "Finance", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=60&w=600", content: "<p>L'abondement de l'entreprise est revalorisé ! Profitez des conseils de vos élus pour bien placer vos primes d'intéressement.</p>" },
                 { title: "Tournoi sportif inter-sites confirmé", tag: "Événement", image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=60&w=600", content: "<p>Le grand tournoi de football et pétanque aura lieu ce printemps ! Préparez vos équipes et inscrivez-vous au local syndical avant la fin du mois. Bonne ambiance et barbecue prévus.</p>" }
+            ],
+            'carling': [
+                { title: "Alerte Pollution Carling : La Direction interpellée", tag: "Urgent", image: "https://images.unsplash.com/photo-1611270629569-8b357cb88da9?q=60&w=600", content: "<p>Les rejets de la semaine dernière dépassent les normes acceptables. La CGT a déposé un droit d'alerte environnementale. Protégeons notre santé et celle des riverains.</p>" },
+                { title: "Emplois : Non à la sous-traitance !", tag: "Social", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=60&w=600", content: "<p>La direction prévoit de sous-traiter la maintenance de la zone Sud. La CGT s'y oppose fermement et réclame des embauches en CDI statut.</p>" }
+            ],
+            'donges': [
+                { title: "Donges : Grève très suivie à l'expédition", tag: "Urgent", image: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=60&w=600", content: "<p>L'expédition a été totalement arrêtée pendant 48h. Les équipes réclament une prime de nuisance revalorisée.</p>" },
+                { title: "Nouveau local syndical CGT Donges", tag: "Info", image: "https://images.unsplash.com/photo-1497215848136-12008adacb23?q=60&w=600", content: "<p>Venez découvrir notre nouveau local près du parking principal. Permanences tous les mardis et jeudis de 12h à 14h.</p>" }
+            ],
+            'feyzin': [
+                { title: "Feyzin : Le craqueur à l'arrêt", tag: "Info", image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=60&w=600", content: "<p>Suite à un incident technique, le vaporcraqueur est à l'arrêt. La CGT s'assure que toutes les procédures de sécurité sont respectées sans pression de la hiérarchie pour un redémarrage rapide.</p>" },
+                { title: "Victoire Prime Transport Feyzin", tag: "Succès", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=60&w=600", content: "<p>Obtention d'une participation de 50% sur l'abonnement TCL et mise en place d'un forfait mobilité durable de 400€/an.</p>" }
+            ],
+            'flandres': [
+                { title: "Flandres Etablissement : Avenir du site", tag: "Stratégie", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=60&w=600", content: "<p>La CGT exige des investissements massifs dans la transition énergétique du site des Flandres pour pérenniser l'emploi industriel dans la région Dunkerquoise.</p>" },
+                { title: "Sécurité : DGI levé sur le parc bacs", tag: "Info", image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=60&w=600", content: "<p>Les travaux de mise en conformité ont enfin été réalisés après l'Alerte Danger Grave et Imminent déposée par vos élus.</p>" }
+            ],
+            'grandpuits': [
+                { title: "Transformation Grandpuits : La CGT vigilante", tag: "Urgent", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=60&w=600", content: "<p>La promesse de \"Zéro licenciement\" lors du passage à la bioraffinerie doit être tenue. Aucun salarié ne doit rester sur le carreau.</p>" },
+                { title: "Formation reconversion : Vos droits", tag: "Social", image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=60&w=600", content: "<p>Contactez vos délégués CGT pour monter vos dossiers de financement de formation dans le cadre du plan de transition du site.</p>" }
+            ],
+            'lamede': [
+                { title: "Bioraffinerie La Mède : Cadences infernales", tag: "Urgent", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=60&w=600", content: "<p>Les effectifs sont insuffisants pour gérer les nouvelles unités de biocarburants. Exigeons des embauches de statutaires !</p>" },
+                { title: "Élections CSE : La Mède vote CGT", tag: "Info", image: "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=60&w=600", content: "<p>Les élections professionnelles approchent. Rejoignez l'équipe dynamique de la CGT La Mède pour défendre nos acquis.</p>" }
+            ],
+            'normandie': [
+                { title: "Normandie : Le grand arrêt 2024", tag: "Info", image: "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?q=60&w=600", content: "<p>Le grand arrêt est en préparation. Vos élus CSSCT exigent des plans de prévention solides, y compris pour les centaines de sous-traitants attendus sur la plateforme.</p>" },
+                { title: "Harcèlement : La politique de tolérance Zéro", tag: "Social", image: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=60&w=600", content: "<p>La CGT accompagne les victimes. Un nouveau numéro de signalement anonyme a été négocié par le syndicat central.</p>" }
+            ],
+            'oudalle': [
+                { title: "Oudalle : Revendications conditions de travail", tag: "Action", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=60&w=600", content: "<p>Les horaires de quart et le manque d'effectif usent le personnel. Débrayage prévu ce jeudi aux postes 3x8.</p>" },
+                { title: "Oudalle Lubrifiants : Bilan positif", tag: "Succès", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=60&w=600", content: "<p>Les résultats de la branche lubrifiants sont excellents. Nous revendiquons donc une prime d'intéressement majorée pour notre site.</p>" }
             ]
         };
 

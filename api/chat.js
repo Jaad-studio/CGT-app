@@ -27,7 +27,8 @@ export default async function handler(req, res) {
     if (!response.ok) throw new Error('API Error');
 
     const data = await response.json();
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Nous ne pouvons pas répondre précisément.";
+    const rawReply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Nous ne pouvons pas répondre précisément.";
+    const reply = rawReply.replace(/[*#]/g, '');
     return res.status(200).json({ reply });
 
   } catch (error) {
