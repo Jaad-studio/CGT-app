@@ -590,6 +590,7 @@
         function closeTool(id) { document.getElementById(id).classList.remove('show-modal'); }
         function selectSite(id) {
             hapticFeedback();
+            currentSiteId = id;
             const site = rawSites.find(s=>s.id===id);
             document.getElementById('news-site-title').textContent = site.name;
             document.getElementById('site-hero-img').src = site.img;
