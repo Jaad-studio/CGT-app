@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logoImg from '../assets/logo.jpg';
 
 export default function Header() {
-  const [greeting, setGreeting] = useState("Bonjour, Jad");
+  const [greeting, setGreeting] = useState("Bonjour, Camarade");
   const [showNotifications, setShowNotifications] = useState(false);
 
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour >= 18 || hour < 5) {
-      setGreeting("Bonsoir, Jad");
+      setGreeting("Bonsoir, Camarade");
     }
   }, []);
 

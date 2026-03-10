@@ -179,7 +179,7 @@
                         </div>
                         <div class="text-white">
                             <h1 class="font-bold text-[10px] uppercase tracking-[0.2em] opacity-75 mb-0.5">TotalEnergies</h1>
-                            <h2 class="text-2xl font-black tracking-tight leading-none" id="greeting">Bonjour, Jad</h2>
+                            <h2 class="text-2xl font-black tracking-tight leading-none" id="greeting">Bonjour, Camarade</h2>
                         </div>
                     </div>
                     <button onclick="toggleNotifications()" class="relative w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 text-white shadow-sm active:scale-90 transition-all">
@@ -271,7 +271,7 @@
                             </div>
                             <div class="relative z-10 mt-8">
                                 <div class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-1">Syndicat TotalEnergies</div>
-                                <h3 class="text-[28px] font-black tracking-widest font-mono">JAD ZORGUI</h3>
+                                <h3 class="text-[25px] font-black tracking-widest font-mono">ADHÉRENT CGT</h3>
                                 <div class="flex items-center gap-2 mt-1">
                                     <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_5px_#22c55e]"></span>
                                     <p class="text-[10px] text-gray-400 font-bold tracking-widest">ADH-2024-08942</p>
@@ -280,7 +280,7 @@
                         </div>
                         <div class="flip-card-back bg-gradient-to-br from-cgtRed to-cgtDarkRed p-7 text-white flex flex-col justify-center items-center shadow-red-glow">
                             <div class="bg-white p-3 rounded-2xl mb-4 shadow-xl">
-                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=ADH-2024-08942" alt="QR Code" class="w-24 h-24 mix-blend-multiply opacity-0 loaded" onload="this.classList.add('loaded')">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=FauxCodeQrCgt" alt="QR Code" class="w-24 h-24 mix-blend-multiply opacity-0 loaded blur-[2px] opacity-80" onload="this.classList.add('loaded')">
                             </div>
                             <p class="text-[10px] font-bold text-white/90 text-center tracking-wide leading-relaxed">Présentez ce code lors des Assemblées Générales.</p>
                         </div>
@@ -369,7 +369,7 @@
                 <button onclick="closeTool('modal-chatbot')" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white"><i class="fas fa-times text-lg text-white"></i></button>
             </div>
             <div class="flex-1 p-6 overflow-y-auto flex flex-col min-h-0" id="chat-messages">
-                <div class="chat-bubble-bot shadow-soft animate-fade-in">Bonjour Jad ! Nous sommes là pour répondre à vos questions. Comment pouvons-nous vous aider ?</div>
+                <div class="chat-bubble-bot shadow-soft animate-fade-in">Bonjour Camarade ! Nous sommes là pour répondre à vos questions. Comment pouvons-nous vous aider ?</div>
             </div>
             <div class="p-4 bg-surface border-t border-gray-100 safe-pb shrink-0">
                 <div class="relative flex items-center gap-2">
@@ -570,7 +570,7 @@
             `).join('');
 
             const hour = new Date().getHours();
-            document.getElementById('greeting').textContent = (hour >= 18 || hour < 5) ? "Bonsoir, Jad" : "Bonjour, Jad";
+            document.getElementById('greeting').textContent = (hour >= 18 || hour < 5) ? "Bonsoir, Camarade" : "Bonjour, Camarade";
             setTimeout(() => document.getElementById('splash-screen').style.display='none', 1200);
         }
 

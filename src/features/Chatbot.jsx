@@ -4,7 +4,7 @@ import { Bot, X, Send } from 'lucide-react';
 
 export default function ChatbotModal({ isOpen, onClose }) {
   const [messages, setMessages] = useState([
-    { role: 'bot', text: 'Bonjour Jad ! Nous sommes là pour répondre à vos questions. Comment pouvons-nous vous aider ?' }
+    { role: 'bot', text: 'Bonjour Camarade ! Nous sommes là pour répondre à vos questions. Comment pouvons-nous vous aider ?' }
   ]);
   const [inputMsg, setInputMsg] = useState('');
   const [isTyping, setIsTyping] = useState(false);

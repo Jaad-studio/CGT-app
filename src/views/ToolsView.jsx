@@ -45,7 +45,7 @@ export default function ToolsView() {
             
             <div className="relative z-10 mt-8">
               <div className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-1">Syndicat TotalEnergies</div>
-              <h3 className="text-[28px] font-black tracking-widest font-mono">JAD ZORGUI</h3>
+              <h3 className="text-[25px] font-black tracking-widest font-mono">ADHÉRENT CGT</h3>
               <div className="flex items-center gap-2 mt-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_5px_#22c55e]"></span>
                 <p className="text-[10px] text-gray-400 font-bold tracking-widest">ADH-2024-08942</p>
@@ -57,7 +57,7 @@ export default function ToolsView() {
           <div className="absolute inset-0 backface-hidden bg-gradient-to-br from-cgtRed to-[#8A0008] p-7 text-white flex flex-col justify-center items-center rounded-[28px] shadow-red-glow"
                style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
             <div className="bg-white p-3 rounded-2xl mb-4 shadow-xl">
-              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=ADH-2024-08942" alt="QR Code" className="w-24 h-24 mix-blend-multiply" />
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=FauxCodeQrCgt" alt="QR Code Factice" className="w-24 h-24 mix-blend-multiply blur-[2px] opacity-80" />
             </div>
             <p className="text-[10px] font-bold text-white/90 text-center tracking-wide leading-relaxed">
               Présentez ce code lors des<br/>Assemblées Générales.
