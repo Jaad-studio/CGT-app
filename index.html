@@ -82,7 +82,7 @@
         .glass-nav { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(24px); border: 1px solid rgba(255, 255, 255, 0.8); }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
 
-        main { flex: 1 1 auto; overflow-y: auto; overflow-x: hidden; padding-bottom: 120px; -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+        main { flex: 1 1 auto; overflow-y: auto; overflow-x: hidden; padding-bottom: 120px; -webkit-overflow-scrolling: touch; }
 
         .view-container { display: none; width: 100%; }
         .view-container.active { display: block; animation: fadeIn 0.4s ease-out forwards; }
@@ -615,12 +615,12 @@
 
         function switchTab(tab) {
             hapticFeedback();
-            document.getElementById('main-scroll').scrollTo(0, 0);
             ['home', 'agenda', 'tools', 'contact'].forEach(t => document.getElementById(`btn-${t}`).className = (t === tab) ? "nav-item active" : "nav-item inactive");
             document.querySelectorAll('.view-container').forEach(v => v.classList.remove('active'));
             document.getElementById('main-header').style.display = (tab === 'home') ? 'block' : 'none';
             document.getElementById('main-nav').style.display = 'flex';
             document.getElementById(tab === 'home' ? 'view-sites' : `view-${tab}`).classList.add('active');
+            document.getElementById('main-scroll').scrollTop = 0;
         }
 
         function openTool(id) { hapticFeedback(); document.getElementById(id).classList.add('show-modal'); }
@@ -654,7 +654,6 @@
         function selectSite(id) {
             hapticFeedback();
             currentSiteId = id;
-            document.getElementById('main-scroll').scrollTo(0, 0);
             const site = rawSites.find(s=>s.id===id);
             document.getElementById('news-site-title').textContent = site.name;
             document.getElementById('site-hero-img').src = site.img;
@@ -663,6 +662,7 @@
             document.getElementById('view-sites').classList.remove('active');
             document.getElementById('view-news').classList.add('active');
             renderNews();
+            document.getElementById('main-scroll').scrollTop = 0;
         }
         
         function renderNews() {
@@ -685,11 +685,11 @@
             });
         }
         function goHome() { 
-            document.getElementById('main-scroll').scrollTo(0, 0);
             document.querySelectorAll('.view-container').forEach(v=>v.classList.remove('active')); 
             document.getElementById('view-sites').classList.add('active'); 
             document.getElementById('main-header').style.display='block'; 
             document.getElementById('main-nav').style.display='flex'; 
+            document.getElementById('main-scroll').scrollTop = 0;
         }
         function closeArticle() { document.getElementById('view-article').classList.remove('show-modal'); }
         function toggleNotifications() { alert('Notifications activées'); }
