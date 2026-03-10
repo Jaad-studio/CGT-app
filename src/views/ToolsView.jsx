@@ -24,7 +24,7 @@ export default function ToolsView() {
 
       {/* Carte Adhérent 3D */}
       <div 
-        className="w-full h-[210px] perspective-[1200px] cursor-pointer mb-8"
+        className="relative z-50 w-full h-[210px] perspective-[1200px] cursor-pointer mb-8"
         onClick={handleFlip}
       >
         <motion.div
